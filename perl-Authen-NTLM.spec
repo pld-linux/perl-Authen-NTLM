@@ -14,7 +14,7 @@ License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRequires:	perl-Crypt-DES >= 2.03
 BuildRequires:	perl-Digest-MD4 >= 1.1
 BuildArch:	noarch
@@ -49,8 +49,7 @@ obliczaj±cych odpowiedzi NT i LM po stronie klienta.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
+%{__perl} Makefile.PL
 %{__make}
 
 %{!?_without_tests:%{__make} test}
