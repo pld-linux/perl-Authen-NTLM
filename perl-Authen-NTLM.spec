@@ -1,0 +1,71 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
+%include	/usr/lib/rpm/macros.perl
+%define	pdir	Authen
+%define	pnam	NTLM
+Summary:	Authen::NTLM - Perl extension for NTLM related computations
+Summary(pl):	Modu³ Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
+Name:		perl-Authen-NTLM
+Version:	0.30
+Release:	1
+License:	GPL or Artistic
+Group:		Development/Languages/Perl
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+BuildRequires:	perl >= 5.6
+BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	perl-Crypt-DES >= 2.03
+BuildRequires:	perl-Digest-MD4 >= 1.1
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq	'perl(Crypt::DES_PP)' 'perl(Digest::Perl::MD4)'
+
+%description
+The NTLM (Windows NT LAN Manager) authentication scheme is the
+authentication algorithm used by Microsoft.
+
+NTLM authentication scheme is used in DCOM and HTTP environment. It is
+used to authenticate DCE RPC packets in DCOM. It is also used to
+authenticate HTTP packets to MS Web Proxy or MS Web Server.
+
+As of this version, NTLM module only provides the client side
+functions to calculate NT response and LM response.
+
+%description -l pl
+Schemat autentykacji NTLM (Windows NT LAN Manager) jest algorytmem
+autentykacji u¿ywanym przez Microsoft.
+
+Schemat autentykacji NTLM jest wykorzystywany w ¶rodowiskach DCOM i
+HTTP. W DCOM s³u¿y do autentykacji pakietów DCE RPC. W HTTP jest
+wykorzystywany do autentykacji pakietów HTTP przez MS Web Proxy i MS
+Web Server.
+
+Aktualna wersja modu³u NTLM zawiera jedynie wsparcie dla funkcji
+obliczaj±cych odpowiedzi NT i LM po stronie klienta.
+
+%prep
+%setup -q -n %{pdir}-%{pnam}-%{version}
+
+%build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
+
+%{!?_without_tests:%{__make} test}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%{perl_sitelib}/Authen/NTLM.pm
+%{perl_sitelib}/Authen/NTLM
+%{_mandir}/man3/*
