@@ -9,7 +9,7 @@ Summary:	Authen::NTLM - Perl extension for NTLM related computations
 Summary(pl):	Modu³ Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
 Version:	0.30
-Release:	1
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -66,6 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/Authen/NTLM.pm
-%{perl_sitelib}/Authen/NTLM
+%{perl_vendorlib}/Authen/NTLM.pm
+%{perl_vendorlib}/Authen/NTLM
 %{_mandir}/man3/*
