@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Authen
-%define	pnam	NTLM
+%define		pdir	Authen
+%define		pnam	NTLM
 Summary:	Authen::NTLM - Perl extension for NTLM related computations
 Summary(pl):	Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
