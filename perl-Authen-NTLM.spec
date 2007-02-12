@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	NTLM
 Summary:	Authen::NTLM - Perl extension for NTLM related computations
-Summary(pl):	Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
+Summary(pl.UTF-8):   Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
 Version:	0.31
 Release:	2
@@ -39,17 +39,17 @@ authenticate HTTP packets to MS Web Proxy or MS Web Server.
 As of this version, NTLM module only provides the client side
 functions to calculate NT response and LM response.
 
-%description -l pl
+%description -l pl.UTF-8
 Schemat autentykacji NTLM (Windows NT LAN Manager) jest algorytmem
-autentykacji uøywanym przez Microsoft.
+autentykacji u≈ºywanym przez Microsoft.
 
-Schemat autentykacji NTLM jest wykorzystywany w ∂rodowiskach DCOM i
-HTTP. W DCOM s≥uøy do autentykacji pakietÛw DCE RPC. W HTTP jest
-wykorzystywany do autentykacji pakietÛw HTTP przez MS Web Proxy i MS
+Schemat autentykacji NTLM jest wykorzystywany w ≈õrodowiskach DCOM i
+HTTP. W DCOM s≈Çu≈ºy do autentykacji pakiet√≥w DCE RPC. W HTTP jest
+wykorzystywany do autentykacji pakiet√≥w HTTP przez MS Web Proxy i MS
 Web Server.
 
-Aktualna wersja modu≥u NTLM zawiera jedynie wsparcie dla funkcji
-obliczaj±cych odpowiedzi NT i LM po stronie klienta.
+Aktualna wersja modu≈Çu NTLM zawiera jedynie wsparcie dla funkcji
+obliczajƒÖcych odpowiedzi NT i LM po stronie klienta.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
