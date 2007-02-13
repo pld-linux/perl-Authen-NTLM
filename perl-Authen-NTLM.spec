@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	NTLM
 Summary:	Authen::NTLM - Perl extension for NTLM related computations
-Summary(pl.UTF-8):   Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
+Summary(pl.UTF-8):	Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
 Version:	0.31
 Release:	2
