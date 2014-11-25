@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Authen
 %define		pnam	NTLM
+%include	/usr/lib/rpm/macros.perl
 Summary:	Authen::NTLM - Perl extension for NTLM related computations
 Summary(pl.UTF-8):	Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
@@ -15,11 +15,12 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	da314ee94b14af2a2f39b6f2c0046e73
-BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	rpm-perlprov >= 4.1-13
+URL:		http://search.cpan.org/dist/Authen-NTLM/
 BuildRequires:	perl-Crypt-DES >= 2.03
 BuildRequires:	perl-Digest-HMAC
 BuildRequires:	perl-Digest-MD4 >= 1.1
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
