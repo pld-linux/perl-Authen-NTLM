@@ -4,7 +4,6 @@
 
 %define		pdir	Authen
 %define		pnam	NTLM
-%include	/usr/lib/rpm/macros.perl
 Summary:	Authen::NTLM - Perl extension for NTLM related computations
 Summary(pl.UTF-8):	Authen::NTLM - rozszerzenie Perla o obliczenia oparte na NTLM
 Name:		perl-Authen-NTLM
